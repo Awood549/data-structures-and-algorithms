@@ -14,16 +14,10 @@ const greeting = (word) => {
 
 
 const speaker = (message, callback) => {
-
-  return message, callback 
+  let caps = greeting(message)
+  return caps
 
 };
-
-describe('Testing challenge 1', () => {
-  test('It should return the message with all uppercase characters', () => {
-    expect(speaker('hello 301 students!', greeting)).toStrictEqual('HELLO 301 STUDENTS!');
-  });
-});
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
