@@ -110,12 +110,13 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  let myTarget = 0;
-
-  if(person.name === character){
-    let kidsArr = [];
-
-  }
+  let kids = 0;
+  arr.forEach(person => {
+    if(person.name === character) {
+      kids = Object.keys(person)[2].length !== undefined ? true : false
+    }
+  });
+  return kids;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,13 +126,24 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  return arr.length; //ask in class
+  let count = 0;
+  arr.forEach(function(element){
+    count++;
+    if(element.spouse){
+      count++;
+    }
+    if(element.children){
+      count += Object.values(element)[2].length;
+    }
+  })
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
 
 Write a function named houseSize that takes in the array of characters and creates an object for each house containing the name of the house and the number of members.
+//
 
 All of these objects should be added to an array named "sizes". Return the "sizes" array from the function.
 
@@ -140,11 +152,26 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
   const sizes = [];
-  // Solution code here...
+
+  arr.forEach(function(element){
+    let count= 1;
+    if(element.spouse){
+      count++;
+    }
+    if(element.children){
+      count += Object.values(element)[2].length
+    }
+    let target = {
+      house: element.house,
+      members: count
+    }
+    sizes.push(target);
+  });
   return sizes;
 };
 
-/* ------------------------------------------------------------------------------------------------
+
+/* --------------------------------------------------------------- ---------------------------------
 CHALLENGE 7 - Stretch Goal
 
 As fans are well aware, "When you play the game of thrones, you win or you die. There is no middle ground."
