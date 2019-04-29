@@ -113,7 +113,7 @@ const hasChildrenEntries = (arr, character) => {
   let kids = 0;
   arr.forEach(person => {
     if(person.name === character) {
-      kids = Object.keys(person)[2].length !== undefined ? true : false
+      kids = Object.keys(person)[0][2].length === 0 ? true : false
     }
   });
   return kids;
