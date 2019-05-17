@@ -111,7 +111,6 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   let kids = 0;
-<<<<<<< HEAD
   arr.forEach(obj => {
     if (Object.entries(obj)[0][1]===character && Object.entries(obj)[2][1].length!==0){
       kids = true;
@@ -119,14 +118,6 @@ const hasChildrenEntries = (arr, character) => {
       kids=false;}
   })
   return (kids);
-=======
-  arr.forEach(person => {
-    if(person.name === character) {
-      kids = Object.keys(person)[0][2].length === 0 ? true : false
-    }
-  });
-  return kids;
->>>>>>> da087d18af3c19b0b2b1238f8c3ea76530416e4c
 };
 
 /* ------------------------------------------------------------------------------------------------
