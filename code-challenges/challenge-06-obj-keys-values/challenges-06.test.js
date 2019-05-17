@@ -192,7 +192,6 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
-  // Solution code here...
   return survivors;
 };
 
