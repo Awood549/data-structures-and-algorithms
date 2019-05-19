@@ -12,15 +12,14 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  let counter = 0;
-  input.map(element => {
-    let map2 = element.map(ele2 =>{
-      if(ele2 === target){
-        counter ++;
-    }})
+  let arr=[];
+  for (let i= 0; i<=input.length-1;i++){
+    for (let j = 0; j<=input[i].length-1;j++){let nums = input[i][j];
+      arr.push(nums);
+    }
   }
-  })
-  return counter;
+  let targeted = arr.filter(function(v,i){return v===target;});
+  return targeted.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,14 +33,17 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  let result = 0;
-  for( let i=0; i < input.length; i++){
-    result = input[i].reduce(function(acc,current) {
-      acc += current;
-    },0)
-    return result
+  let arr=[];
+  for (let i= 0; i<=input.length-1;i++){
+    for (let j = 0; j<=input[i].length-1;j++){let nums = input[i][j];
+      arr.push(nums);
+    }
   }
-  return
+  let targeted = arr.reduce( function(acc,v,i) {
+    acc = acc + v;
+    return acc;
+  }, 0);
+  return targeted;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,8 +59,9 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
-};
+  let arr = [];
+  input.forEach(function(v,i){arr.push(v.filter(v => typeof v === "number").filter(v => v%5===0).map(v=>2**v));})
+  return arr;};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -123,8 +126,9 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
-};
+  let arr = data.filter(element => element.gender==='male'|| element.gender==='female').map(element=>element.name).toString().replace(/,/g,' and ');
+
+  return arr;};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -133,8 +137,19 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
-};
+  var mapped = data.map(element =>{ 
+    var heights = {};
+    heights['name'] = element.name;
+    heights['height'] = parseInt(element.height);
+    return heights;
+ });
+ let short = mapped.reduce(function(acc,i){
+   i=Object.values(i);
+   if(i[1]<acc){acc=i[1]}else{acc=acc};
+   return acc;
+ },500);
+ let almost = mapped.filter(element=>element.height===short);
+ return almost.map(element=>element.name).toString();};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
