@@ -47,6 +47,7 @@ Write a function named getBaseStatGreaterThan that, given the snorlaxData, below
 
 For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array containing the 'special-defense' and 'special-attack' objects.
 ------------------------------------------------------------------------------------------------ */
+//snorlax is the best pokemon. 
 
 const snorlaxData = {
   stats: [
