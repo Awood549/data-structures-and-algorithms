@@ -2,7 +2,7 @@
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
-
+Im just adding this line so I can make a change and make a PR to submit
 Write a function named oddValues that, given an array of integers as input, uses filter to return an array containing only the odd integers.
 
 For example, oddValues([1,2,3]) returns [1,3].
@@ -10,6 +10,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   return arr.filter( odd => (odd % 2===1));
+
 };
 
 /* ------------------------------------------------------------------------------------------------
