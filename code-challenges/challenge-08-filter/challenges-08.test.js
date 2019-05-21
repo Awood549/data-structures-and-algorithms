@@ -48,6 +48,7 @@ Write a function named getBaseStatGreaterThan that, given the snorlaxData, below
 
 For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array containing the 'special-defense' and 'special-attack' objects.
 ------------------------------------------------------------------------------------------------ */
+//snorlax is the best pokemon. 
 
 const snorlaxData = {
   stats: [
@@ -156,10 +157,10 @@ CHALLENGE 7 - Stretch Goal
 Write a function named evenOddNumericValues that, given an array as input, uses filter to remove any non-numeric values, then uses map to generate a new array containing the string 'even' or 'odd', depending on the original value.
 
 For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 'odd'].
------------------------------------------------------------------------------------------------- */
+------------------------------------------------------------------------------------------------ */ 
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  // Solution code here
 };
 
 /* ------------------------------------------------------------------------------------------------
